@@ -1,0 +1,25 @@
+#development of functions
+#functions-- Code reusability and meant to perform some operations
+# function defn  - Subprogram of a main program (or) a part of main program is called functions
+
+# Example:
+#  f(x) =x^2
+
+#function definition
+#function call
+#formal parameters
+# for every function call there must exists a function defn otherwise we get NameError
+
+#syntax:
+# def functioname(list of formal parameters):
+#     """ doc string """
+#     -------------------
+#     -------------------
+#     Block of statements (perform logic)
+#     ------------------
+
+
+
+
+
+
