@@ -1,5 +1,5 @@
 """
-Python database communication (PYDB)
+Python database communication (PYDBC)
 communication b/w python and database
 SQL/PLSQL IVAN --book
 Files limitations
@@ -53,17 +53,58 @@ Steps:
             varname =conobj.cursor()
             varname is an object of <class,"cx_Oracle.cursor">
 4. Design the query and place the query in object of cursor(DDL,DML,DRL)
-
+        varname= cur.execute("query")
     >> 1) DDL --> data definition language
             a)create
+                ceating the table  in db
+                $ create table <table-name>
+ex: create table student(stno number(3) primary key,sname varchar2(10) not null, marks number(5,2) not null)
+        $ to view ---> desc student;
+        >> to view content--> select * from student;
             b) alter
+>> To alter the existing table alos we cna adddnew columns to the table
+ex: alter table student modify(stno number(5) primary key, sname varchar(25) not null, marks number(6,2) not null
+                         college varchar2(25) not null)
+ alter table table-name add(college varchar2(25) not null)
+        # to view --> desc student;
+        # to view content--> select * from student;
             c)drop
+ex: drop table table-name
+
     >> 2) DML --> data manipulation language
             a) insert
-            b)delete
+                >> insert into table values(val1 for col1, val2 for col2 ---valn--coln)
+                ex: insert into employee values(111,"san",10.5,"hcl");
+                after insertion commit the changes or else the changes will not be reflected
+                rollback ---> can be done only before the commit 
+            b) delete
+            >> delete from table <table-name>
+            >> delete from table employee where sal>=10  # condition
+            >> delete from employee where eno=555
+            
             c) update
+            (update all records)
+          sql  >> update tablename <set> existingcolname=exp1,existingcol2=exp2 .....n
+          (update particular records)
+         sql  >> update tablename <set> existingcolname=exp1,existingcol2=exp2 ....where condiion list      
+            ex: update employee set sal=sal+sal*(25/100)
+                update employee set sal=sal+sal*(10/100) where eno=24  # only to specifc employee
+  
     >> 3) DRL -->data retrieval language
             a) select
+            >> select count(*) from employee       # displays the count result
+            >> select eno from employee  # all emp no data
+            >> select eno,ename, esal from employee # all emp no, name, and sal data
+            >> select * from employee # to get all records
+            >> select * from employee where sal>10L and sal<=5L
+        To read or extract the records data from table
+        syntax:  select col1,col2...coln from <table-name>
+    ##NOTE:
+        Once select query is executed all the data is present in the cur object
+        and we can retrive/ extract them by using 3-methods they are:
+        1.fetchone() ---> # here object stores in form of tuple()
+        2.fetchmany(no of records) --> # here objectis list of tuple [(),(),()]
+        3.fetchall()
 5. python process the result from db
 6. python program closes the connection
 """
