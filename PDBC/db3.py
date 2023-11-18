@@ -20,7 +20,7 @@ try:
     smarks=float(input("enter the marks: "))
     col=input("enter the college: ")
     qry = "insert into student values (%d,'%s',%f,'%s')"  # take care of quotes single
-    cur.execute(qry, %(sno,sname,%smarks,%col))
+    cur.execute(qry %(sno,sname,smarks,col))
     con.commit()
     print("The record {} inserted successfully".format(cur.rowcount))
 except cx_Oracle.DatabaseError as db:
@@ -37,7 +37,7 @@ while(True):
         smarks=float(input("enter the marks: "))
         col=input("enter the college: ")
         qry = "insert into student values (%d,'%s',%f,'%s')"  # take care of quotes single
-        cur.execute(qry, %(sno,sname,%smarks,%col))
+        cur.execute(qry %(sno,sname,smarks,col))
         con.commit()
         print("The record {} inserted successfully".format(cur.rowcount))
         print("*"*50)
@@ -62,7 +62,7 @@ def studinsert():
             smarks=float(input("enter the marks: "))
             col=input("enter the college: ")
             qry = "insert into student values (%d,'%s',%f,'%s')"  # take care of quotes single
-            cur.execute(qry, %(sno,sname,%smarks,%col))
+            cur.execute(qry %(sno,sname,smarks,col))
             con.commit()
             print("The record {} inserted successfully".format(cur.rowcount))
             print("*"*50)

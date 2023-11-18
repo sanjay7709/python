@@ -6,7 +6,7 @@ try:
     cur=con.cursor()
     tname=input("enter the table name: ")
     qry="select * from %s"
-    cur.execute(qry, %tname)
+    cur.execute(qry %tname)
     # code for obtaining colnames
     print("*"*50)
     for colname in [metadata for metadata in cur.description]: # list comphrenshion
@@ -25,6 +25,7 @@ try:
     # print()
 except cx_Oracle.DatabaseError:
     print("The table does not exists...")
+# by default all databases closes the connection no need to specify this below block
 finally:
     con.close()
     print("the connection is closed....")

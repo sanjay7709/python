@@ -7,9 +7,9 @@ def empdel():
             cur=con.cursor()
             eno=int(input("enter the employee no to be deleted: "))
             qry="delete from employee where eno=%d"
-            cur.execute(qry, %(eno))
+            cur.execute(qry %(eno))
             con.commit()
-            print("the employee {} record is removed successfully ".format(rowcount))
+            print("the employee {} record is removed successfully ".format(cur.rowcount))
             if(cur.rowcount<=0):
                 print("empno does not exists")
             else:

@@ -22,7 +22,7 @@ python wants to communicate any database we need to use pre-defined module,
 such module are not present in python library
 so we need to use pre-defined module using "pip"
 >> for oracle database
-    mod:  cx_oracle
+    mod:  cx_Oracle
 >> MySql databas
     mod: mysql-connector
 check for pip path
@@ -84,9 +84,9 @@ ex: drop table table-name
             
             c) update
             (update all records)
-          sql  >> update tablename <set> existingcolname=exp1,existingcol2=exp2 .....n
+          sql  >> update tablename set existingcolname=exp1,existingcol2=exp2 .....n
           (update particular records)
-         sql  >> update tablename <set> existingcolname=exp1,existingcol2=exp2 ....where condiion list      
+         sql  >> update tablename set existingcolname=exp1,existingcol2=exp2 ....where condiion list      
             ex: update employee set sal=sal+sal*(25/100)
                 update employee set sal=sal+sal*(10/100) where eno=24  # only to specifc employee
   
