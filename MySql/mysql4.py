@@ -41,13 +41,14 @@ try:
                     break   
             if(found==False):
                 print("The record {} is an invalid accno".format(dstacno))
-            qry="update fundstransf set bal=bal-%f where acno=%d"
-            cur.execute(qry %(stramt,sracno))
-            qry1="update fundstransf set bal=bal+%f where acno=%d"
-            cur.execute(qry %(stramt,dstacno))
+            qry="update %s set bal=bal-%f where acno=%d"
+            cur.execute(qry %(tname,stramt,sracno))
+            qry1="update %s set bal=bal+%f where acno=%d"
+            cur.execute(qry %(tname,stramt,dstacno))
             con.commit()
             print("\n form Account number {} INR: {} is transferred to Acno: {} -- verify".format(sracno,stramt,dstacno))
             print("The records updated successfully")
+            qry="select * from %s"
             cur.execute(qry %(tname))
             recs=cur.fetchall()
             print("*"*50)
