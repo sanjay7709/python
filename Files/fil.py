@@ -7,6 +7,10 @@ and store the data in files/database'''
 file -- collection of records , resides in secondary memory
 All objects data of main memory becomes file of secondary memory
 
+NOTE: 
+To view the files data we use >>  type <file-name>
+
+
 Stream--> Flow of data b/w main memory and the file of secondary memory is called stream
 Types of Files
 a) Text Files --> digits, symbols, alphabets, only

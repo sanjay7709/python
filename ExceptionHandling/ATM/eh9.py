@@ -4,7 +4,7 @@ def atm():
     count=3
     while(True):
         pin=getpass.getpass(prompt="Enter your PIN : ")
-        if(pin=="4652"):
+        if(pin=="4444"):
             sbi()
         else:
             print("You have entered incorrect pin {} attempts remaining".format(count))
