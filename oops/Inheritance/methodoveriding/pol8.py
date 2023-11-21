@@ -13,7 +13,7 @@ class person(banking):
     def openac(self,name):
         print("{} opens a new account".format(name))
     def deposit(self,damt):
-        print("{} amount is demoisted in accxxx".format(damt))
+        print("{} amount is deposited in accxxx".format(damt))
 
 r=ravi()
 r.loan("vmalay",2.4)
