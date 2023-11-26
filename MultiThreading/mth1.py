@@ -19,7 +19,7 @@ class name in threading module: Thread
         target function which is executed by child thread and also specifying values passing to 
         target func in the form of tuple.
         synatx: threading.Thread(target=functionname,arg(val,val2...valn))
-2) getName(str)
+2) getName(str)--> deprectaed
 3) setname() --> it is deprecated and we can use "name" instead
                 synatx : obj.name="san"
 4) run() -->  It is one of the null body method of thread class it is used for defining logic of pypr
@@ -32,7 +32,9 @@ class name in threading module: Thread
                     
 5) start() --> It is used for dispatching the child thread to corresponding function
                 synt: childthread.start()
-6) is_alive()
+6) is_alive()--> Func returns true if thread is in execution 
+            ---> else returns false if thread not yet started or alredy complted
+                synt: trdobj.is_alive()
 7) join()---> it is used for making the child thread join after their completion
                 synt: childthread.join()
 
